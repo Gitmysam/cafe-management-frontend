@@ -1,0 +1,15 @@
+.sign-up-layout {
+  background: linear-gradient(180deg, rgb(107, 107, 51), rgb(92, 54, 54));
+  padding: 1rem;
+  input {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+  button {
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+  }
+}
