@@ -8,8 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, SignUpComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, SignUpComponent, LoginComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
