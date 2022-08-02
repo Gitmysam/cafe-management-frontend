@@ -9,14 +9,24 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductComponent } from './components/product/product.component';
+import { CreateModuleModule } from './components/create-module/create-module.module';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, SignUpComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    SignUpComponent,
+    LoginComponent,
+    ProductComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    CreateModuleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
