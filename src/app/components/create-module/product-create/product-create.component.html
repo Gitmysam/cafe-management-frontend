@@ -1,0 +1,48 @@
+<div class="d-flex align-items-center justify-content-center p-5 m-2">
+  <div class="pro-sec p-2">
+    <h2 class="p-2">Create product</h2>
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="row px-5">
+        <div class="col-md-6 d-flex flex-column p-3">
+          <span class="text-danger">*</span>
+          <label for="name" class="input"
+            ><input type="text" name="name" [(ngModel)]="productCreate.name" />
+            <span class="input__label fw-bold">Product Name</span>
+          </label>
+        </div>
+        <div class="col-md-6 d-flex flex-column p-3">
+          <span class="text-danger">*</span>
+          <label for="price" class="input"
+            ><input
+              type="number"
+              name="price"
+              [(ngModel)]="productCreate.price"
+            />
+            <span class="input__label fw-bold">Product Price</span>
+          </label>
+        </div>
+        <div class="col-md-6 d-flex flex-column p-3">
+          <label for="description" class="input">
+            <textarea
+              name="description"
+              id=""
+              placeholder="Type here....."
+              [(ngModel)]="productCreate.description"
+            ></textarea>
+            <span class="input__label fw-bold">Description</span>
+          </label>
+        </div>
+        <div class="col-md-6 d-flex flex-column p-3">
+          <span class="text-danger">*</span>
+          <label for="status" class="fw-bold">Product Status</label>
+          <input
+            type="checkbox"
+            name="status"
+            [(ngModel)]="productCreate.status"
+          />
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="onCreateProduct()">Create</button>
+  </div>
+</div>

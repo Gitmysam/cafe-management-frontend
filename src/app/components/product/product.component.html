@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between p-5">
+    <h2>Product Details</h2>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="openProductModal()"
+      >
+        Create product
+      </button>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <table class="w-100">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Status</th>
+          <th scope="col">Description</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="productDetails.length">
+        <tr *ngFor="let pd of productDetails">
+          <td scope="row">{{ pd.name }}</td>
+          <td>{{ pd.price }}</td>
+          <td>{{ pd.status }}</td>
+          <td>{{ pd.description }}</td>
+          <td>
+            <div
+              class="h-100 d-flex align-items-center justify-content-center"
+              (click)="onClickDelete(pd._id)"
+            >
+              <i class="fa fa-trash-o"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container text-center p-5" *ngIf="!productDetails.length">
+    <h2>No product available</h2>
+  </div>
+  <div
+    class="d-flex align-items-center justify-content-center create-product-container"
+    *ngIf="isCreateProduct"
+  >
+    <app-product-create></app-product-create>
+  </div>
+</div>

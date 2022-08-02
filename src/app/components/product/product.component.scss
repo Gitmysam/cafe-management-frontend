@@ -1,0 +1,47 @@
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(137, 182, 93);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+td {
+  text-align: center;
+  i {
+    color: red;
+    font-size: 1.6rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}
+
+.container {
+  position: relative;
+  .create-product-container {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+  }
+}

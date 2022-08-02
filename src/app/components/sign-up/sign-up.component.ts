@@ -1,4 +1,4 @@
-import { SignUp, Login } from './../../model/model';
+import { SignUp } from './../../model/model';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Router } from '@angular/router';
@@ -17,13 +17,6 @@ export class SignUpComponent implements OnInit {
     status: false,
     password: '',
   };
-
-  //for login process
-  loginDetails: Login = {
-    email: '',
-    password: '',
-  };
-  localStorageData: string | null = '';
   constructor(private api: ApiService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -37,22 +30,6 @@ export class SignUpComponent implements OnInit {
       },
       complete: () => {
         this.router.navigate(['/home']);
-      },
-    });
-  }
-
-  onClickLogin() {
-    this.api.userLogIn(this.loginDetails).subscribe({
-      next: (res) => {
-        console.log(res);
-        localStorage.setItem('token', JSON.stringify(res));
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        this.localStorageData = localStorage.getItem('token');
-        console.log(this.localStorageData);
       },
     });
   }

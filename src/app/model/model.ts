@@ -1,4 +1,5 @@
-export interface product {
+export interface Product {
+  _id: string;
   id: string;
   name: string;
   categoryId: string;
@@ -16,7 +17,13 @@ export interface SignUp {
   password: string;
 }
 
-export interface Login{
-  email:string,
-  password:string
+export interface Category {
+  name: string;
+  id: string;
+  _id: string;
+}
+
+export interface Login {
+  email: string;
+  password: string;
 }
