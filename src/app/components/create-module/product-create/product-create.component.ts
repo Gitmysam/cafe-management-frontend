@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product, Category } from '../../../model/model';
 import { ApiService } from '../../../api.service';
 import { Router } from '@angular/router';
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-create.component.scss'],
 })
 export class ProductCreateComponent implements OnInit {
+  @Output() isCreateProduct: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
   productCreate: Product = {
     _id: '',
     id: '',
@@ -31,8 +33,11 @@ export class ProductCreateComponent implements OnInit {
         console.log(err);
       },
       complete: () => {
-        // this.router.navigate(['/product']);
+        window.location.reload();
       },
     });
+  }
+  closeClick() {
+    this.isCreateProduct.emit(false);
   }
 }
