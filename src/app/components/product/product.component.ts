@@ -34,6 +34,13 @@ export class ProductComponent implements OnInit {
       next: (res) => {
         // console.log(res);
       },
+      error: (err) => {},
+      complete: () => {
+        window.location.reload();
+      },
     });
+  }
+  closeModal(event: boolean) {
+    this.isCreateProduct = event;
   }
 }

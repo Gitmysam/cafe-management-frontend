@@ -47,6 +47,8 @@
     class="d-flex align-items-center justify-content-center create-product-container"
     *ngIf="isCreateProduct"
   >
-    <app-product-create></app-product-create>
+    <app-product-create
+      (isCreateProduct)="closeModal($event)"
+    ></app-product-create>
   </div>
 </div>
